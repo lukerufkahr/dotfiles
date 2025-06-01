@@ -37,7 +37,7 @@ cp -r ~/.config/ranger/* ~/Git/dotfiles/.config/ranger/
 
 cd ~/Git/dotfiles/
 git add .
-git commit -m "{$commit_message}"
+git commit -m "$commit_message"
 git push -u origin main
 
 # Exit out of repository
