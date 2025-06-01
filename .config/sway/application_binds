@@ -1,0 +1,5 @@
+# application bindings
+
+bindsym $mod+Mod1+f exec firefox-esr
+bindsym $mod+Mod1+m exec thunderbird
+bindsym $mod+Mod1+p exec 1password --quick-access
