@@ -4,6 +4,8 @@
 
 echo "Executing."
 
+read -p "Enter message: " commit_message
+
 ### Copy files ###
 
 # Vim
@@ -34,7 +36,7 @@ cp -r ~/.config/ranger/* ~/Git/dotfiles/.config/ranger/
 
 cd ~/Git/dotfiles/
 git add .
-git commit -m "backed up"
+git commit -m $commit_message
 git push -u origin main
 
 # Exit out of repository
