@@ -1,6 +1,10 @@
 #!/bin/bash
 
+### Start ###
+
 echo "Executing."
+
+### Copy files ###
 
 # Vim
 cp -r ~/.vimrc ~/Git/dotfiles/
@@ -26,11 +30,16 @@ cp -r ~/.config/qutebrowser/* ~/Git/dotfiles/.config/qutebrowser/
 # Ranger
 cp -r ~/.config/ranger/* ~/Git/dotfiles/.config/ranger/
 
-### Git
+### Git ###
 
 cd ~/Git/dotfiles/
 git add .
 git commit -m "backed up"
 git push -u origin main
+
+# Exit out of repository
+cd ~
+
+### Finish ###
 
 echo "Done."
