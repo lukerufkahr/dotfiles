@@ -3,3 +3,9 @@
 bindsym $mod+Mod1+f exec firefox-esr
 bindsym $mod+Mod1+m exec thunderbird
 bindsym $mod+Mod1+p exec 1password --quick-access
+
+# volume control
+
+bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +2%
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -2%
