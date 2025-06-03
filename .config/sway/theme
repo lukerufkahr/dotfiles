@@ -1,6 +1,6 @@
 # theme
 
-output * bg ~/Pictures/stardew.jpg fill
+output * bg ~/Pictures/sunflowers.jpg fill
 
 # class                 border  bground text    indicator child_border
 client.focused          #000000 #000000 #FFFFFF #000000   #000000

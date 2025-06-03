@@ -9,3 +9,11 @@ bindsym $mod+Mod1+p exec 1password --quick-access
 bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
 bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +2%
 bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -2%
+
+# 1password
+
+bindsym Ctrl+Shift+Space exec 1password --quick-access
+
+# screenshot ( grim / slurp )
+
+bindsym Ctrl+Shift+P exec grim -g "$(slurp)" ~/Pictures/Screenshots/$(date +%d%m%y.%H%M%S).png
