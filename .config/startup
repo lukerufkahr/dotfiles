@@ -1,0 +1,5 @@
+Exec --no-startup-id picom -b --config ~/.config/picom/picom.conf
+
+Exec --no-startup-id feh --bg-fill ~/Pictures/wallpapers/geometry.png
+
+Exec --no-startup-id 1password --silent
