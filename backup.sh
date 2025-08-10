@@ -11,13 +11,13 @@ read -p "Enter message: " commit_message
 
 rsync ~/.vimrc ~/Git/dotfiles/
 
-rsync -r ~/.config/i3/ ~/Git/dotfiles/.config/
+rsync -r ~/.config/i3/ ~/Git/dotfiles/.config
 
 rsync ~/.Xresources ~/Git/dotfiles/
 
 rsync -r ~/.icons ~/Git/dotfiles
 
-rsync -r ~/.config/picom/ ~/Git/dotfiles/.config/
+rsync -r ~/.config/picom/ ~/Git/dotfiles/.config
 
 ### Git ###
 

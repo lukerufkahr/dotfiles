@@ -1,3 +1,5 @@
+exec_always --no-startup-id ~/.config/polybar/launch.sh
+
 Exec --no-startup-id picom -b --config ~/.config/picom/picom.conf
 
 Exec --no-startup-id feh --bg-fill ~/Pictures/wallpapers/geometry.png
