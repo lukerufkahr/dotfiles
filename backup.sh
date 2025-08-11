@@ -21,6 +21,8 @@ rsync -r ~/.config/picom ~/Git/dotfiles/.config/
 
 rsync -r ~/.config/polybar ~/Git/dotfiles/.config/
 
+rsync -r ~/scripts ~/Git/dotfiles
+
 ### Git ###
 
 cd ~/Git/dotfiles/
