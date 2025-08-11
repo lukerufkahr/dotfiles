@@ -15,13 +15,13 @@ rsync -r ~/.config/i3 ~/Git/dotfiles/.config/
 
 rsync ~/.Xresources ~/Git/dotfiles/
 
-rsync -r ~/.icons ~/Git/dotfiles
+rsync -r ~/.icons ~/Git/dotfiles/
 
 rsync -r ~/.config/picom ~/Git/dotfiles/.config/
 
 rsync -r ~/.config/polybar ~/Git/dotfiles/.config/
 
-rsync -r ~/scripts ~/Git/dotfiles
+rsync -r ~/scripts ~/Git/dotfiles/
 
 ### Git ###
 
