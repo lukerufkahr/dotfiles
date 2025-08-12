@@ -2,6 +2,8 @@
 
 bindsym $mod+d exec rofi -show drun
 
+bindsym XF86Calculator exec qalculate-gtk
+
 # volume control
 
 bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle

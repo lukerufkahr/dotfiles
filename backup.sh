@@ -4,9 +4,6 @@
 
 echo "Executing."
 
-# Get commit message from user
-read -p "Enter message: " commit_message
-
 ### Copy files ###
 
 rsync ~/.vimrc ~/Git/dotfiles/
@@ -27,6 +24,11 @@ rsync -r ~/scripts ~/Git/dotfiles/
 
 cd ~/Git/dotfiles/
 git add .
+
+git status
+
+read -p "Enter message: " commit_message
+
 git commit -m "$commit_message"
 git push -u origin main
 
