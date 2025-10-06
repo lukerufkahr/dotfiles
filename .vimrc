@@ -1,1 +1,10 @@
+set number
+syntax enable
+
+
+
+
+
+
+
 

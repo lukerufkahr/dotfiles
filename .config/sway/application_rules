@@ -1,0 +1,21 @@
+# application bindings
+
+#bindsym $mod+d exec wofi --show drun
+
+bindsym XF86Calculator exec qalculate-gtk
+
+# volume control
+
+bindsym XF86AudioMute exec wpctl set-mute @DEFAULT_SINK@ toggle
+bindsym XF86AudioRaiseVolume exec wpctl set-volume @DEFAULT_SINK@ 1%+
+bindsym XF86AudioLowerVolume exec wpctl set-volume @DEFAULT_SINK@ 1%-
+
+# lock screen
+
+bindsym $mod+ctrl+l exec swaylock -C ~/.config/sway/lock
+
+# floating rules
+
+# screen share window fix
+#for_window [floating_from="auto" title=" is sharing your screen.$"] border none, sticky enable, move position 0 px -55 px
+

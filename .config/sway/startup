@@ -1,0 +1,5 @@
+#exec_always --no-startup-id pkill -f wallpaper
+#exec_always --no-startup-id /bin/sh /home/lucasrufkahr/scripts/wallpaper.sh
+exec --no-startup-id lxpolkit
+exec keepassxc
+

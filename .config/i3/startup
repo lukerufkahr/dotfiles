@@ -1,9 +1,0 @@
-exec_always --no-startup-id pkill -f wallpaper
-
-exec_always --no-startup-id ~/.config/polybar/launch.sh
-
-exec --no-startup-id picom -b --config ~/.config/picom/picom.conf
-
-exec_always --no-startup-id /bin/sh /home/lucasrufkahr/scripts/wallpaper.sh
-
-exec --no-startup-id 1password --silent

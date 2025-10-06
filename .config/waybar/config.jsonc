@@ -1,0 +1,83 @@
+// -*- mode: jsonc -*-
+{
+    // "layer": "top", // Waybar at top layer
+    "position": "top", // Waybar position (top|bottom|left|right)
+    //"height": 5, // Waybar height (to be removed for auto height)
+    // "width": 1280, // Waybar width
+    "spacing": 8, // Gaps between modules (4px)
+    // Choose the order of the modules
+    "modules-left": [
+        "sway/workspaces",
+        "sway/mode",
+        "sway/scratchpad",
+	"mpris"
+    ],
+    "modules-center": [
+        "clock"
+    ],
+    "modules-right": [
+	"backlight",
+        "pulseaudio",
+        "network",
+	"memory",
+        "battery",
+        "tray"
+    ],
+    "sway/mode": {
+        "format": "<span style=\"italic\">{}</span>"
+    },
+    "sway/scratchpad": {
+        "format": "{icon} {count}",
+        "show-empty": false,
+        "format-icons": ["", ""],
+        "tooltip": true,
+        "tooltip-format": "{app}: {title}"
+    },
+   "mpris": {
+        "interval": 1,
+	"format": "{status}: {artist} - {title}"
+   },
+   "tray": {
+        "spacing": 10
+    },
+    "clock": {
+        "format": "{:%A, %B %d at %I:%M %p}",
+	"interval": 60
+    },
+   "backlight": {
+   	"format" :"brightness: {percent}%"     
+   },
+   "memory": {
+	"format": "mem: {used}G/{total}G",
+	"interval": 60,
+	"states": {
+		"warning": 50,
+		"critical": 80
+	}
+   },
+   "battery": {
+        "states": {
+            "good": 95,
+            "warning": 50,
+            "critical": 25
+        },
+        "format": "batt: {capacity}%",
+        "format-full": "full: {capacity}%",
+        "format-charging": "chrg: {capacity}%",
+        "format-plugged": "plug: {capacity}%",
+        "format-alt": "ttd: {time}",
+	"interval": 15
+    },
+   "network": {
+        "format-wifi": "wlan: {essid} {signalStrength}%",
+        "format-ethernet": "{ipaddr}/{cidr}",
+        "tooltip-format": "{ifname} via {gwaddr}",
+        "format-linked": "{ifname} (No IP)",
+        "format-disconnected": "Disconnected",
+        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+    },
+    "pulseaudio": {
+        "format": "volume: {volume}%",
+        "format-muted": "mute: {volume}%"
+    }
+}
