@@ -1,0 +1,18 @@
+# application bindings
+######################
+
+# Terminal
+bindsym $mod+Return exec alacritty
+
+# Calculator
+bindsym XF86Calculator exec qalculate-gtk
+
+# Application launcher
+bindsym $mod+d exec rofi -show drun
+
+# Window fixes
+##############
+
+# screen share window fix
+for_window [floating_from="auto" title=" is sharing your screen.$"] border none, sticky enable, move position 0 px -55 px
+

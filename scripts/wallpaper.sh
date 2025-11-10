@@ -1,6 +1,6 @@
 #!/bin/sh
 while :
 do
-	feh --bg-fill --randomize ~/Pictures/wallpapers/skylar/*
+	feh --bg-fill --randomize ~/Pictures/wallpapers/*
 	sleep 5m
 done
