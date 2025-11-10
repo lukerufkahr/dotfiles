@@ -1,1 +1,1 @@
-output * resolution 1920x1080 position 1920,0 bg #3B6EA5 solid_color
+output eDP-1 resolution 1920x1200 position 1920,0 bg /home/lucasrufkahr/Pictures/Wallpapers/DSC_1142.jpg fill
