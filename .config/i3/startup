@@ -1,3 +1,5 @@
+exec xset s 900 10
+
 exec --no-startup-id picom -b --config ~/.config/picom/picom.conf
 
 exec_always --no-startup-id pkill -f wallpaper

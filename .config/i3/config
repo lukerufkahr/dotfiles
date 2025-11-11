@@ -1,7 +1,7 @@
 set $mod Mod4
 font pango:monospace 8
 exec --no-startup-id dex --autostart --environment i3
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+exec --no-startup-id xss-lock --transfer-sleep-lock -- xsecurelock
 exec --no-startup-id nm-applet
 
 # Use pactl to adjust volume in PulseAudio.
@@ -20,6 +20,9 @@ tiling_drag modifier titlebar
 
 # kill focused window
 bindsym $mod+Shift+q kill
+
+# lock screen
+bindsym $mod+l exec xset s activate
 
 # move focus
 bindsym $mod+Left focus left
