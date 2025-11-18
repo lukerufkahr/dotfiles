@@ -27,4 +27,3 @@ if [ -d "$HOME/.local/bin" ] ; then
 fi
 
 export SSH_AUTH_SOCK=${XDG_RUNTIME_DIR}/ssh-agent.socket
-export MOZ_USE_XINPUT2=1
