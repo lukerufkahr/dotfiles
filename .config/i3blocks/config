@@ -1,0 +1,37 @@
+# [spotify]
+# command=echo Spotify "$(playerctl -p spotify status): $(playerctl -p spotify metadata title) by $(playerctl -p spotify metadata artist)"
+# interval=10
+# color=#11FFAA
+
+# [weather]
+# command=curl -Ss 'https://wttr.in?0&u&T&Q' | cut -c 16- | head -2 | xargs echo
+# interval=3600
+# color=#A4C2F4
+
+[volume]
+command=echo "volume: $(pactl get-sink-volume $(pactl get-default-sink) | grep % | awk '{print$5}') $(pactl get-sink-mute $(pactl get-default-sink) | awk '{print$2}' | sed 's/no//' | sed 's/yes/mute/')"
+interval=once
+signal=10
+color=#AAFF00
+
+[backlight]
+command=echo "brightness:  $(brightnessctl | grep "%" | awk '{print $4}' | sed 's/(//' | sed 's/)//')"
+interval=once
+signal=11
+color=#00FF00
+
+[battery]
+command=echo "battery: $(cat /sys/class/power_supply/BAT0/status | sed 's/Discharging//' | sed 's/Charging/+/' | sed 's/Full/!/')$(cat /sys/class/power_supply/BAT0/capacity)%"
+interval=30
+signal=14
+color=#FFAAAA
+
+#[profile]
+#command=echo "power mode: $(powerprofilesctl | grep '*' | sed 's/* //' | sed 's/://')"
+#interval=once
+#signal=12
+#color=#FFCCEE
+
+[time]
+command=echo "time: $(date +%R)"
+interval=30

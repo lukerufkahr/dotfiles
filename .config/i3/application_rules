@@ -1,18 +1,46 @@
 # application bindings
 ######################
 
+# Screenshots
+bindsym Print exec --no-startup-id maim "/home/$USER/Pictures/$(date)"
+bindsym $mod+Print exec --no-startup-id maim --window $(xdotool getactivewindow) "/home/$USER/Pictures/$(date)"
+bindsym Shift+Print exec --no-startup-id maim --select "/home/$USER/Pictures/$(date)"
+
+## Clipboard Screenshots
+bindsym Ctrl+Print exec --no-startup-id maim | xclip -selection clipboard -t image/png
+bindsym Ctrl+$mod+Print exec --no-startup-id maim --window $(xdotool getactivewindow) | xclip -selection clipboard -t image/png
+bindsym Ctrl+Shift+Print exec --no-startup-id maim --select | xclip -selection clipboard -t image/png
+
+# File Manager
+bindsym $mod+Ctrl+f exec pcmanfm
+
+# Web Browser
+bindsym $mod+Ctrl+w exec firefox
+
+# Email
+bindsym $mod+Ctrl+e exec thunderbird
+
 # Terminal
 bindsym $mod+Return exec alacritty
+
+# KeePass
+for_window [class="KeePassXC"] move to workspace $keepass
+
+# Thunderbird
+for_window [class="Thunderbird"] move to workspace $email
+
+# Spotify
+
+for_window [class="Spotify"] move to workspace $music
 
 # Calculator
 bindsym XF86Calculator exec qalculate-gtk
 
 # Application launcher
 bindsym $mod+d exec rofi -show drun
+bindsym $mod+Tab exec rofi -timeout-delay 5 -timeout-action "kb-accept-entry" -show window
 
 # Window fixes
-##############
-
 # screen share window fix
 for_window [floating_from="auto" title=" is sharing your screen.$"] border none, sticky enable, move position 0 px -55 px
 

@@ -1,13 +1,16 @@
 exec xset s 900 10
 
-exec --no-startup-id picom -b --config ~/.config/picom/picom.conf
+exec --no-startup-id dunst
+exec --no-startup-id dex --autostart --   environment i3
+exec --no-startup-id xss-lock --transfer-sleep-lock -- xsecurelock
+# exec --no-startup-id picom -b --config ~/.config/picom/picom.conf
 
-exec_always --no-startup-id pkill -f wallpaper
-exec_always --no-startup-id /bin/sh /home/lucasrufkahr/scripts/wallpaper.sh
 
-exec_always --no-startup-id ~/.config/polybar/launch.sh
+# exec --no-startup-id pkill -f wallpaper
+# exec --no-startup-id pkill -f power_profile
+
+# exec --no-startup-id bash /home/lucasrufkahr/scripts/wallpaper.sh
+# exec --no-startup-id bash /home/lucasrufkahr/scripts/power_profile.sh
 
 exec --no-startup-id lxpolkit
-
 exec keepassxc
-
