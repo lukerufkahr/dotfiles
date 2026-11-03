@@ -1,0 +1,29 @@
+{
+        "layer": "top",
+        "position": "top",
+        "height": 24,
+
+        "modules-left": ["ext/workspaces"],
+	"modules-center": ["clock"],
+        "modules-right": ["wireplumber"],
+
+        "ext/workspaces": {
+                "format": "{name}",
+                "on-click": "activate"
+        },
+
+        "wireplumber": {
+                "format": "VOL {volume}%",
+                "format-muted": "VOL muted",
+                "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+                "scroll-step": 5,
+                "tooltip": false
+        },
+
+        "clock": {
+                "format": "{:%H:%M}",
+                "tooltip": false
+        },
+	"on-sigusr1" : "hide",
+	"on-sigusr2" : "show"
+}
