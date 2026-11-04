@@ -54,7 +54,7 @@ hl.on("hyprland.start", function ()
   hl.exec_cmd("mako")
   hl.exec_cmd("hypridle")
   hl.exec_cmd("systemctl --user start hyprpolkitagent")
-  hl.exec_cmd("waybar_auto_hide")
+  hl.exec_cmd("gammastep -l manual:lat=38.44451:lon=-91.00808")
 end)
 
 
@@ -94,14 +94,14 @@ hl.env("HYPRCURSOR_SIZE", "12")
 -- Refer to https://wiki.hypr.land/configuring/core/config-options/
 hl.config({
     general = {
-        gaps_in  = 3,
+        gaps_in  = 5,
         gaps_out = 10,
 
-        border_size = 1,
+        border_size = 2,
 
         col = {
             active_border   = { colors = {"rgba(ffffffff)", "rgba(ffffffff)"}, angle = 90 },
-            inactive_border = "rgba(ffffff00)",
+            inactive_border = "rgba(00000fff)",
         },
 
         -- Set to true to enable resizing windows by clicking and dragging on borders and gaps
