@@ -4,5 +4,6 @@
 # group: Math Environments
 # --
 \begin{equation}
- $0
+$0
+\tag{0}
 \end{equation}

@@ -50,8 +50,7 @@
 
 (use-package org-download
   :hook
-  (dired-mode . org-download-enable)
-  :custom (org-download-screenshot-method "gnome-screenshot -a -f %s"))
+  (org-mode . org-download-enable))
 
 (use-package org-journal
   :ensure t
@@ -62,6 +61,16 @@
   :config
   (setq org-journal-dir "~/Documents/org/journal/"
         org-journal-date-format "%A, %d %B %Y.org"))
+
+(require 'ox-publish)
+(setq org-publish-project-alist
+      '(("org-school-notes"
+         :base-directory "~/Documents/org/school/"               ;; Where your .org files live
+         :base-extension "org"
+         :publishing-directory "~/Documents/org/html/school/" ;; Where the HTML should go
+         :publishing-function org-html-publish-to-html
+         :recursive t
+         )))
 
 ;;; Snippets
 

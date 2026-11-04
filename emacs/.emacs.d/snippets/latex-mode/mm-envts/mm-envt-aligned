@@ -5,5 +5,5 @@
 # condition: (yas-texmathp)
 # --
 \begin{aligned}
- $0
+$0
 \end{aligned}

@@ -21,9 +21,8 @@
                 "scroll-step": 5,
                 "tooltip": false
         },
-
-        "clock": {
-                "format": "{:%H:%M}",
+"clock": {
+                "format": "{:%H:%M %D}",
                 "tooltip": false
         },
 	"battery": {
