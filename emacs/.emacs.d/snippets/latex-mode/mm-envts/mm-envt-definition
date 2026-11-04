@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: definition
+# key: :def
+# group: Math Environments
+# --
+\begin{definition}[$1]
+$0
+\end{definition}

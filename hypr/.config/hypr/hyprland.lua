@@ -36,7 +36,7 @@ hl.monitor({
 -- Set programs that you use
 local terminal    = "alacritty"
 local fileManager = "dolphin"
-local menu        = "wofi --show drun"
+local menu        = "rofi -show drun"
 
 
 -------------------
@@ -54,6 +54,7 @@ hl.on("hyprland.start", function ()
   hl.exec_cmd("mako")
   hl.exec_cmd("hypridle")
   hl.exec_cmd("systemctl --user start hyprpolkitagent")
+  hl.exec_cmd("waybar_auto_hide")
 end)
 
 
@@ -230,8 +231,6 @@ hl.config({
         allow_new_top_layers_over_existing_fullscreen = true, -- Set to false to make newly mapped top layers render below existing covering fullscreen window
     },
 })
-
-
 ---------------
 ---- INPUT ----
 ---------------

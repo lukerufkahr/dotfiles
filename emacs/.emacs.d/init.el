@@ -15,7 +15,7 @@
 (setq inhibit-startup-screen t backup-directory-alist
       '(("." . "~/.emacs.d/backups/")))
 
-(load-theme 'solarized-dark t)
+(load-theme 'modus-operandi t)
 (global-visual-line-mode 1)
 (fido-vertical-mode 1)
 
@@ -52,6 +52,16 @@
   :hook
   (dired-mode . org-download-enable)
   :custom (org-download-screenshot-method "gnome-screenshot -a -f %s"))
+
+(use-package org-journal
+  :ensure t
+  :defer t
+  :init
+  ;; Change default prefix key; needs to be set before loading org-journal
+  (setq org-journal-prefix-key "C-c j ")
+  :config
+  (setq org-journal-dir "~/Documents/org/journal/"
+        org-journal-date-format "%A, %d %B %Y.org"))
 
 ;;; Snippets
 
