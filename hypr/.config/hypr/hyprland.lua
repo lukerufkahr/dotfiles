@@ -91,6 +91,8 @@ hl.env("HYPRCURSOR_SIZE", "12")
 ---- LOOK AND FEEL ----
 -----------------------
 
+
+
 -- Refer to https://wiki.hypr.land/configuring/core/config-options/
 hl.config({
     general = {
@@ -105,7 +107,7 @@ hl.config({
         },
 
         -- Set to true to enable resizing windows by clicking and dragging on borders and gaps
-        resize_on_border = false,
+        resize_on_border = true,
 
         -- Please see https://wiki.hypr.land/configuring/extra/tearing/ before you turn this on
         allow_tearing = false,
@@ -130,15 +132,21 @@ hl.config({
 
         blur = {
             enabled   = true,
-            size      = 3,
-            passes    = 1,
-            vibrancy  = 0.1696,
+            size      = 5,
+            passes    = 2,
+            vibrancy  = 0.1,
         },
     },
 
     animations = {
         enabled = true,
     },
+})
+
+hl.layer_rule({
+  name  = "waybar-layer",
+  match = { namespace = "waybar" },
+  blur  = true,
 })
 
 -- Default curves and animations, see https://wiki.hypr.land/configuring/core/animations/
@@ -228,7 +236,7 @@ hl.config({
 
 hl.config({
     layers = {
-        allow_new_top_layers_over_existing_fullscreen = true, -- Set to false to make newly mapped top layers render below existing covering fullscreen window
+        allow_new_top_layers_over_existing_fullscreen = false, -- Set to false to make newly mapped top layers render below existing covering fullscreen window
     },
 })
 ---------------
@@ -354,7 +362,7 @@ local suppressMaximizeRule = hl.window_rule({
 
     suppress_event = "maximize",
 })
--- suppressMaximizeRule:set_enabled(false)
+suppressMaximizeRule:set_enabled(false)
 
 hl.window_rule({
     -- Fix some dragging issues with XWayland

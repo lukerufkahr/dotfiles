@@ -5,5 +5,5 @@
 # condition: (yas-texmathp)
 # --
 \begin{gathered}
- $0
+$0
 \end{gathered}
