@@ -10,11 +10,11 @@
 (require 'use-package)
 (setq use-package-always-ensure t)
 
-(unless (package-installed-p 'quelpa)
-  (with-temp-buffer
-    (url-insert-file-contents "https://raw.githubusercontent.com/quelpa/quelpa/master/quelpa.el")
-    (eval-buffer)
-    (quelpa-self-upgrade)))
+;(unless (package-installed-p 'quelpa)
+;  (with-temp-buffer
+;    (url-insert-file-contents "https://raw.githubusercontent.com/quelpa/quelpa/master/quelpa.el")
+;    (eval-buffer)
+;    (quelpa-self-upgrade)))
 
 (add-to-list 'load-path "~/.emacs.d/el-easydraw")
 (with-eval-after-load 'org
@@ -39,11 +39,11 @@
 
 ;;; Quelpa
 
-(quelpa
- '(quelpa-use-package
-   :fetcher git
-   :url "https://github.com/quelpa/quelpa-use-package.git"))
-(require 'quelpa-use-package)
+;(quelpa
+; '(quelpa-use-package
+;   :fetcher git
+;   :url "https://github.com/quelpa/quelpa-use-package.git"))
+;(require 'quelpa-use-package)
 
 ;;; Org mode
 
@@ -107,11 +107,11 @@
 	 :publishing-function org-publish-attachment)
 	("ee2120-notes" :components("ee2120-org" "ee2120-images"))))
 
-(use-package org-krita
-  :ensure t
-  :quelpa (org-krita :fetcher github :repo "lepisma/org-krita" :files ("*.el" "resources"))
-  :config
-  :hook (org-mode .org-krita-mode))
+;(use-package org-krita
+;  :ensure t
+;  :quelpa (org-krita :fetcher github :repo "lepisma/org-krita" :files ("*.el" "resources"))
+;  :config
+;  :hook (org-mode .org-krita-mode))
 
 (use-package org-draw
   :ensure t
