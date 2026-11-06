@@ -270,10 +270,16 @@ hl.gesture({
 -- Example per-device config
 -- See https://wiki.hypr.land/configuring/core/devices/ for more
 hl.device({
-    name        = "epic-mouse-v1",
-    sensitivity = -0.5,
+	name = "wacom-intuos-s-pen",
+	transform = 3,
+	relative_input = true,
+	enabled = true
 })
 
+hl.device({
+	name = "getech-huge-trackball-1",
+	sensitivity = 0.5
+})
 
 ---------------------
 ---- KEYBINDINGS ----

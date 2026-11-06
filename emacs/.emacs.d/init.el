@@ -10,6 +10,24 @@
 (require 'use-package)
 (setq use-package-always-ensure t)
 
+(unless (package-installed-p 'quelpa)
+  (with-temp-buffer
+    (url-insert-file-contents "https://raw.githubusercontent.com/quelpa/quelpa/master/quelpa.el")
+    (eval-buffer)
+    (quelpa-self-upgrade)))
+
+(add-to-list 'load-path "~/.emacs.d/el-easydraw")
+(with-eval-after-load 'org
+  (require 'edraw-org)
+  (edraw-org-setup-default))
+;; When using the org-export-in-background option (when using the
+;; asynchronous export function), the following settings are
+;; required. This is because Emacs started in a separate process does
+;; not load org.el but only ox.el.
+(with-eval-after-load "ox"
+  (require 'edraw-org)
+  (edraw-org-setup-exporter))
+
 ;;; Appearance and editing
 
 (setq inhibit-startup-screen t backup-directory-alist
@@ -18,6 +36,14 @@
 (load-theme 'modus-operandi t)
 (global-visual-line-mode 1)
 (fido-vertical-mode 1)
+
+;;; Quelpa
+
+(quelpa
+ '(quelpa-use-package
+   :fetcher git
+   :url "https://github.com/quelpa/quelpa-use-package.git"))
+(require 'quelpa-use-package)
 
 ;;; Org mode
 
@@ -32,6 +58,8 @@
   (setq org-format-latex-options
 	(plist-put (copy-sequence org-format-latex-options)
 		   :scale 1.2))
+  (setq org-display-inline-images nil)
+  (setq org-image-actual-width 300)
   (require 'org-habit))
 
 (global-set-key (kbd "C-c l") #'org-store-link)
@@ -64,13 +92,30 @@
 
 (require 'ox-publish)
 (setq org-publish-project-alist
-      '(("org-school-notes"
-         :base-directory "~/Documents/org/school/"               ;; Where your .org files live
+      '(("ee2120-org"
+         :base-directory "~/Documents/org/school/ee2120/lecture_notes"               ;; Where your .org files live
          :base-extension "org"
-         :publishing-directory "~/Documents/org/html/school/" ;; Where the HTML should go
+         :publishing-directory "~/Documents/org/html/school/ee2120/" ;; Where the HTML should go
          :publishing-function org-html-publish-to-html
          :recursive t
-         )))
+	 :auto-preamble t
+         )
+	("ee2120-images"
+	 :base-directory "~/Documents/org/school/ee2120/lecture_notes/figures"
+	 :base-extension "png\\|jpg"
+	 :publishing-directory "~/Documents/org/html/school/ee2120/figures"
+	 :publishing-function org-publish-attachment)
+	("ee2120-notes" :components("ee2120-org" "ee2120-images"))))
+
+(use-package org-krita
+  :ensure t
+  :quelpa (org-krita :fetcher github :repo "lepisma/org-krita" :files ("*.el" "resources"))
+  :config
+  :hook (org-mode .org-krita-mode))
+
+(use-package org-draw
+  :ensure t
+  :commands (org-draw org-draw-edit org-draw-setup))
 
 ;;; Snippets
 

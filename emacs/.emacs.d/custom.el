@@ -9,7 +9,8 @@
      "~/Documents/org/project_notes/synth/tasks.org"
      "~/Documents/org/todo.org" "~/Documents/org/journal/"))
  '(package-selected-packages
-   '(auctex org-autolist org-download org-modern solarized-theme
+   '(auctex dash f org-autolist org-download org-draw org-krita
+	    org-modern quelpa quelpa-use-package s solarized-theme
 	    yasnippet)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
