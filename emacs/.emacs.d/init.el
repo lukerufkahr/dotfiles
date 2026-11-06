@@ -88,24 +88,7 @@
   (setq org-journal-prefix-key "C-c j ")
   :config
   (setq org-journal-dir "~/Documents/org/journal/"
-        org-journal-date-format "%A, %d %B %Y.org"))
-
-(require 'ox-publish)
-(setq org-publish-project-alist
-      '(("ee2120-org"
-         :base-directory "~/Documents/org/school/ee2120/lecture_notes"               ;; Where your .org files live
-         :base-extension "org"
-         :publishing-directory "~/Documents/org/html/school/ee2120/" ;; Where the HTML should go
-         :publishing-function org-html-publish-to-html
-         :recursive t
-	 :auto-preamble t
-         )
-	("ee2120-images"
-	 :base-directory "~/Documents/org/school/ee2120/lecture_notes/figures"
-	 :base-extension "png\\|jpg"
-	 :publishing-directory "~/Documents/org/html/school/ee2120/figures"
-	 :publishing-function org-publish-attachment)
-	("ee2120-notes" :components("ee2120-org" "ee2120-images"))))
+        org-journal-date-format "%A, %d %B %Y."))
 
 ;(use-package org-krita
 ;  :ensure t
@@ -142,6 +125,9 @@
 ;;; Custom settings
 
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
+(load custom-file t)
+
+(setq custom-file (expand-file-name "projects.el" user-emacs-directory))
 (load custom-file t)
 
 ;;; init.el ends here
